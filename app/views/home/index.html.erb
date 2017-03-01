@@ -13,10 +13,14 @@
         <li><strong>Location:</strong> <%= current_user.location %></li>
         <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
         <li><strong>URL:</strong> <%= current_user.url %></li>
+        <div id="map-container">
+        <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API']%>&callback=initMap"></script>
+          <%= render 'map' %>
+        </div>
       </ul>
     </div>
   </div>
-  
+
 <% else %>
   <div class="jumbotron">
     <h1>Welcome!</h1>
