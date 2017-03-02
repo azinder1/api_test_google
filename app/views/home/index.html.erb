@@ -13,8 +13,10 @@
         <li><strong>Location:</strong> <%= current_user.location %></li>
         <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
         <li><strong>URL:</strong> <%= current_user.url %></li>
+
+        <!-- Google maps api call -->
         <div id="map-container">
-        <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API']%>&callback=initMap"></script>
+        <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API']%>&libraries=drawing&libraries=places&callback=initMap"></script><!-- callback that return map details in a longitute -->
           <%= render 'map' %>
         </div>
       </ul>
